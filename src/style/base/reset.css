@@ -163,4 +163,12 @@ li {
 
 * {
   box-sizing: border-box;
+  font-family: Montserrat, sans-serif !important;
+}
+
+.ant-radio-inner {
+  border-color: #9faae2 !important;
+}
+.ant-radio-checked .ant-radio-inner {
+  background-color: var(--primary) !important;
 }

@@ -1,7 +1,7 @@
 .item {
   box-sizing: border-box;
   width: min(360px, 95%);
-  height: 60px;
+  height: 50px;
   color: #4d5a99;
   background-color: #0000;
   border-radius: 10px;

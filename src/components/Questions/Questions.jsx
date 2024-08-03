@@ -11,16 +11,24 @@ import { useEffect } from 'react';
 const Questions = () => {
   const phrases = useSelector(selectPhrases);
   const [index, setIndex] = useState(0);
-  const elem = phrases[index];
+  const [answer, setAnswer] = useState('');
 
+  const question = phrases[index];
   const isFirstElem = index === 0;
   const isLastElem = index === phrases.length - 1;
 
   const handleNextQuestion = () => {
     setIndex(index + 1);
+    setAnswer('');
   };
   const handlePreviousQuestion = () => {
     setIndex(index - 1);
+    setAnswer('');
+  };
+
+  const handleAnswer = () => {
+    const isValid = question.rus === answer;
+    console.log(isValid);
   };
 
   useEffect(() => {
@@ -31,13 +39,15 @@ const Questions = () => {
     <div className={style['question-container']}>
       <ProgressBar max={phrases.length} current={index} />
 
-      <QuestionItem phrase={elem} />
+      <QuestionItem index={index} setAnswer={setAnswer} showAnswer={false} />
 
       <div className={style.buttons}>
         <Button disabled={isFirstElem} onClick={handlePreviousQuestion}>
           <ArrowLeftOutlined style={{ fontSize: '35px' }} />
         </Button>
-        <Button primary>Check Answer</Button>
+        <Button primary onClick={handleAnswer}>
+          Answer
+        </Button>
         <Button disabled={isLastElem} onClick={handleNextQuestion}>
           <ArrowRightOutlined style={{ fontSize: '35px' }} />
         </Button>
