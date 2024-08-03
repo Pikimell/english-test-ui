@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import Button from '../CustomElements/Button/Button.jsx';
 import ProgressBar from '../CustomElements/ProgressBar/ProgressBar';
+import { useEffect } from 'react';
 
 const Questions = () => {
   const phrases = useSelector(selectPhrases);
@@ -21,6 +22,10 @@ const Questions = () => {
   const handlePreviousQuestion = () => {
     setIndex(index - 1);
   };
+
+  useEffect(() => {
+    setIndex(0);
+  }, [phrases]);
 
   return (
     <div className={style['question-container']}>

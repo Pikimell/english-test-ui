@@ -6,7 +6,6 @@ const ProgressBar = ({ max, current }) => {
   return (
     <div className={style['progress-bar']}>
       {elements.map((el, i) => {
-        console.log(i <= current);
         const classes = clsx(style['progress-item'], {
           [style.fill]: i <= current,
         });
