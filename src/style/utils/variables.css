@@ -1,0 +1,23 @@
+:root {
+  --primary: #5e51ff;
+  --secondary: #ffbd5c;
+  --accent-error: #ff7979;
+  --accent-ok: #c6eab0;
+  --dark-color: #4d5a99;
+  --hint-color: #9faae2;
+  --light-color: #ffff;
+  --primary-shadow: #9faae2;
+  --font-stack: Inter, sans-serif;
+
+  --primary-background: rgb(140, 130, 255);
+  --background-gradient: linear-gradient(
+    42deg,
+    rgba(120, 109, 255, 1) 0%,
+    rgba(210, 210, 255, 1) 34%,
+    rgba(233, 233, 255, 1) 50%,
+    rgba(210, 210, 255, 1) 65%,
+    rgba(120, 109, 255, 1) 100%
+  );
+
+  --base-font: 'Montserrat', sans-serif;
+}

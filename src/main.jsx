@@ -1,11 +1,10 @@
+import './style/index.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/App/App';
 import { Provider } from 'react-redux';
 import { store } from './redux/store.js';
 import { BrowserRouter } from 'react-router-dom';
-import './style/index.css';
-import './style/variables.css';
 import { ConfigProvider, theme } from 'antd';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
