@@ -17,14 +17,15 @@ const handleRejected = (state, action) => {
 export const phrasesSlice = createSlice({
   name: 'phrases',
   initialState,
-  extraReducers: {
-    [fetchPhrases.fulfilled](state, action) {
-      state.isLoading = false;
-      state.error = null;
-      state.items = action.payload;
-    },
-    [fetchPhrases.pending]: handlePending,
-    [fetchPhrases.rejected]: handleRejected,
+  extraReducers: builder => {
+    builder
+      .addCase(fetchPhrases.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items = action.payload;
+      })
+      .addCase(fetchPhrases.pending, handlePending)
+      .addCase(fetchPhrases.rejected, handleRejected);
   },
 });
 
