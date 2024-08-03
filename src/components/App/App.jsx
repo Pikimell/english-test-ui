@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import CategoryList from '../CategoryList/CategoryList';
+import Questions from '../Questions/Questions';
 import style from './App.module.css';
 import { fetchCategories } from '../../redux/categories/operations.js';
 
@@ -12,6 +13,7 @@ const App = ({}) => {
   return (
     <div className={style.container}>
       <CategoryList />
+      <Questions />
     </div>
   );
 };
