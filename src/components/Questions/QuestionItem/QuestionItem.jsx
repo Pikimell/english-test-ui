@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 const QuestionItem = ({ index, setAnswer, showAnswer }) => {
   const questions = useSelector(selectPhrases);
   const [question, setQuestion] = useState({});
+  const [userAnswer, setUserAnswer] = useState('');
 
   const loadData = () => {
     const question = getQuestion(index, questions);
@@ -16,6 +17,7 @@ const QuestionItem = ({ index, setAnswer, showAnswer }) => {
 
   const handleChangeAnswer = e => {
     setAnswer(e.target.value);
+    setUserAnswer(e.target.value);
   };
 
   useEffect(loadData, [index, questions]);

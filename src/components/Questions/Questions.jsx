@@ -12,6 +12,7 @@ const Questions = () => {
   const phrases = useSelector(selectPhrases);
   const [index, setIndex] = useState(0);
   const [answer, setAnswer] = useState('');
+  const [showAnswer, setShowAnswer] = useState(false);
 
   const question = phrases[index];
   const isFirstElem = index === 0;
@@ -34,12 +35,19 @@ const Questions = () => {
   useEffect(() => {
     setIndex(0);
   }, [phrases]);
+  useEffect(() => {
+    setShowAnswer(false);
+  }, [index]);
 
   return (
     <div className={style['question-container']}>
       <ProgressBar max={phrases.length} current={index} />
 
-      <QuestionItem index={index} setAnswer={setAnswer} showAnswer={false} />
+      <QuestionItem
+        index={index}
+        setAnswer={setAnswer}
+        showAnswer={showAnswer}
+      />
 
       <div className={style.buttons}>
         <Button disabled={isFirstElem} onClick={handlePreviousQuestion}>
