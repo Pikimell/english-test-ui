@@ -1,0 +1,30 @@
+.item {
+  box-sizing: border-box;
+  width: min(360px, 95%);
+  height: 60px;
+  color: #4d5a99;
+  background-color: #0000;
+  border-radius: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 10px 0;
+  padding-left: 30px;
+  font-size: 20px;
+  font-weight: 500;
+  display: flex;
+  cursor: pointer;
+}
+
+.active {
+  background-color: var(--primary);
+  color: var(--light-color);
+}
+
+.title {
+  width: 90%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin: 0;
+  overflow: hidden;
+  text-transform: capitalize;
+}

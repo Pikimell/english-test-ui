@@ -1,3 +1,3 @@
-export const select = state => {
-  return state;
+export const selectPhrases = state => {
+  return state.phrases.items;
 };

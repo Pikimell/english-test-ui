@@ -9,6 +9,7 @@ export const fetchCategories = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await axios.get('/categories');
+      response.data.sort((a, b) => a.title.localeCompare(b.title));
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

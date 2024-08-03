@@ -1,3 +1,3 @@
-export const select = state => {
-  return state;
+export const selectCategories = state => {
+  return state.categories.items;
 };
