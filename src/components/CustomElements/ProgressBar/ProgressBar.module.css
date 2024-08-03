@@ -1,0 +1,17 @@
+.progress-bar {
+  width: 100%;
+  display: flex;
+}
+
+.progress-item {
+  box-sizing: border-box;
+  height: 6px;
+  width: 100%;
+  content: '';
+  margin: 3px;
+  background-color: #fff;
+}
+
+.fill {
+  background-color: var(--accent-ok);
+}

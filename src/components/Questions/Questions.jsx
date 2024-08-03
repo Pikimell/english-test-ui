@@ -5,6 +5,7 @@ import QuestionItem from './QuestionItem/QuestionItem.jsx';
 import { useState } from 'react';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import Button from '../CustomElements/Button/Button.jsx';
+import ProgressBar from '../CustomElements/ProgressBar/ProgressBar';
 
 const Questions = () => {
   const phrases = useSelector(selectPhrases);
@@ -23,7 +24,7 @@ const Questions = () => {
 
   return (
     <div className={style['question-container']}>
-      <div></div>
+      <ProgressBar max={phrases.length} current={index} />
 
       <QuestionItem phrase={elem} />
 
