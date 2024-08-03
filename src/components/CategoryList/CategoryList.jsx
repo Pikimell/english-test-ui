@@ -7,12 +7,16 @@ import { useSelector } from 'react-redux';
 import { selectCategories } from '../../redux/categories/selectors.js';
 
 const CategoryList = () => {
+  const [filter, setFilter] = useState('');
   const items = useSelector(selectCategories);
+  const filtered = items.filter(el =>
+    el.title.toLowerCase().includes(filter.toLowerCase()),
+  );
   return (
     <Flex className={style.categories} vertical>
-      <SearchBar />
+      <SearchBar value={filter} onChange={e => setFilter(e.target.value)} />
       <ul className={style.list}>
-        {items.map(el => {
+        {filtered.map(el => {
           return <CategoryItem key={el._id} category={el} />;
         })}
       </ul>
