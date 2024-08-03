@@ -6,7 +6,7 @@ export const fetchPhrases = createAsyncThunk(
   async (categoryId, thunkAPI) => {
     try {
       const params = { categoryId };
-      const response = await axios.get('/phrases', params);
+      const response = await axios.get('/phrases', { params });
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
