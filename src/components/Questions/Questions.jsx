@@ -19,17 +19,17 @@ const Questions = () => {
   const isLastElem = index === phrases.length - 1;
 
   const handleNextQuestion = () => {
-    setIndex(index + 1);
     setAnswer('');
+    setIndex(index + 1);
   };
   const handlePreviousQuestion = () => {
-    setIndex(index - 1);
     setAnswer('');
+    setIndex(index - 1);
   };
 
   const handleAnswer = () => {
     const isValid = question.rus === answer;
-    console.log(isValid);
+    setAnswer('');
   };
 
   useEffect(() => {
